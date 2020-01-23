@@ -22,8 +22,8 @@
 <body>
 	<span class="load">&nbsp;</span>
 	<div class="headings">
-		<h1>Old School Boot Screen Generator</h1>
-		<h2>for the Nintendo Switch</h2>
+		<h1>Old School PC Bios</h1>
+		<h2>Splash Bootscreen Generator for the Nintendo Switch</h2>
 	</div>
 
 	<div class="content">
@@ -39,7 +39,9 @@
 					<div class="input-field">
 						<label>Version</label>
 						<select name="firmware">
+							<option value="9.1.0">9.1.0 (LITE)</option>
 							<option value="9.1.0" selected="selected">9.1.0</option>
+							<option value="9.0.1">9.0.1 (LITE)</option>
 							<option value="9.0.1">9.0.1</option>
 							<option value="9.0.0">9.0.0</option>
 							<option value="8.1.1">8.1.1 (LITE)</option>
@@ -100,7 +102,7 @@
 							<option value="400G">400GB</option>
 							<option value="256G">256GB</option>
 							<option value="512G" selected="selected">512GB</option>
-							<option value="1000G">1TB</option>
+							<option value="1024G">1TB</option>
 						</select>
 					</div>
 					<div class="input-field">
@@ -110,6 +112,10 @@
 							<option value="energyStar" selected="selected">Energy Star Logo</option>
 							<option value="energyStarAtmosphere">Energy Star Atmosphere</option>
 							<option value="atmosphere">Atmosphere Logo</option>
+							<option value="reinx">ReiNX Logo</option>
+							<option value="lakka">Lakka Logo</option>
+							<option value="lineageos">Lineage OS Logo</option>
+							<option value="sxos">SX OS Logo</option>
 							<option value="switchlogo">Switch Logo</option>
 						</select>
 					</div>
@@ -125,6 +131,8 @@
 						<select name="type" class="form-control form-control-sm">
 							<option value="atmosphere" selected="selected">Atmosphere</option>
 							<option value="reinx">ReiNX</option>
+							<option value="lakka">Lakka</option>
+							<option value="lineageos">Lineage OS</option>
 							<option value="sxos">SX OS</option>
 							<option value="custom">Custom</option>
 						</select>
@@ -138,7 +146,6 @@
 						<label for="hold"></label>
 						<span>Hold</span>
 						<span class="input-field">
-							<label>Keybind</label>
 							<select name="onboot" class="form-control form-control-sm">
 								<option value="VOL DOWN" selected="selected">VOL DOWN</option>
 								<option value="VOL UP">VOL UP</option>
@@ -158,14 +165,12 @@
 							</select>
 						</span>
 						<span class="input-field">
-							<label>Timing</label>
 							<select name="firstTime" class="form-control form-control-sm">
 								<option value="now">now</option>
 								<option value="boot" selected="selected">on boot</option>
 							</select>
 						</span> <span>to enter</span>
 						<span class="input-field">
-							<label>Bootloader</label>
 							<input type="text" name="boottool" val="." style="display: none;" class="form-control form-control-sm" />
 							<select name="boottool" class="form-control form-control-sm">
 								<option value="hekate" selected="selected">Hekate</option>
@@ -183,9 +188,7 @@
 		<div class="container">
 			<canvas width="1280" height="720" id="bootPreview"></canvas>
 			<canvas width="1280" height="720" id="scaledCanvas"></canvas>
-			<!-- BMP downloads disabled for now -->
-			<!-- <a id="downloadBMP" class="button">Download BMP</a> -->
-			<a id="downloadPNG" class="button secondary">Download PNG</a>
+			<a id="downloadPNG" class="button">Download PNG</a>
 		</div>
 		
 		<div class="container">
@@ -216,7 +219,7 @@
 				<h4>Who made this?</h4>
 				<ul>
 					<li>
-						<a href="https://github.com/Draenz">Jonathan Torrelio</a> - Maintainer and collaborator for tool usage on the Switch.
+						<a href="https://github.com/Draenz">Jonathan Torrelio</a> - Collaborator for updated tool usage on the Switch.
 					</li>
 					<li>
 						<a href="https://github.com/HarryPeach">Harry Peach</a> - Maintainer, rewrote and redesigned the old tool for usage on the Switch.
