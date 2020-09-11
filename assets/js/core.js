@@ -64,6 +64,8 @@ function redrawCanvas(){
     var sdSize = $('select[name=sd] option:selected', "#settings");
     // Copyright information, at the bottom of the screen
     var copyrightLine = "Copyright (C) 2020, ";
+    // The chosen region device to display
+    var region = $('select[name=regionOptions] option:selected', "#settings");
     // The chosen top-right logo to display
     var sideLogo = $('select[name=logoOptions] option:selected', "#settings");
     // Whether or not to display the bootloader message at the bottom of the screen
@@ -140,19 +142,19 @@ function redrawCanvas(){
         case 'atmosphere':
             drawCanvasCtx.drawImage(symbolSheet, 30, 168, 101, 84, 1100, 16, 151, 134);
 			break;
-		case 'reinx':
-            drawCanvasCtx.drawImage(symbolSheet, 39, 252, 93, 84, 1128, 16, 139, 126);
+	case 'reinx':
+            drawCanvasCtx.drawImage(symbolSheetNX, 39, 252, 93, 84, 1128, 16, 139, 126);
 			break;
-		case 'lakka':
-            drawCanvasCtx.drawImage(symbolSheet, 0, 84, 133, 84, 966, 16, 266, 168);
+	case 'lakka':
+            drawCanvasCtx.drawImage(symbolSheetNX, 0, 84, 133, 84, 966, 16, 266, 168);
 			break;
         case 'lineageos':
-            drawCanvasCtx.drawImage(symbolSheet, 30, 168, 101, 84, 1100, 16, 151, 134);
+            drawCanvasCtx.drawImage(symbolSheetNX, 30, 168, 101, 84, 1100, 16, 151, 134);
 			break;
-		case 'sxos':
-            drawCanvasCtx.drawImage(symbolSheet, 30, 168, 101, 84, 1100, 16, 151, 134);
+	case 'sxos':
+            drawCanvasCtx.drawImage(symbolSheetNX, 30, 168, 101, 84, 1100, 16, 151, 134);
 			break;
-		case 'switchlogo':
+	case 'switchlogo':
             drawCanvasCtx.drawImage(symbolSheet, 39, 252, 93, 84, 1128, 16, 139, 126);
 			break;
     }
@@ -170,16 +172,16 @@ function redrawCanvas(){
     drawText(copyrightLine, 64, 48);
 
     if (firmwareVersion.val() == "8.1.1")
-    	drawText("Nintendo Switch Lite (ver " + firmwareVersion.val() + ")", 32, 160);
+    	drawText("Nintendo Switch Lite (ver " + firmwareVersion.val() + ") (" + region.val() + ")", 32, 160);
     else
-		drawText("Nintendo Switch (ver " + firmwareVersion.val() + ")", 32, 160);
+	drawText("Nintendo Switch (ver " + firmwareVersion.val() + ") (" + region.val() + ")", 32, 160);
 
     drawText("Main Processor    :   Nvidia Tegra X1 SoC", 32, 224);
     drawText("Memory Test       :   4194304K OK", 32, 256);
 
     drawText("Plug and Play BIOS Extension, v1.0A", 32, 320);
-    drawText("Detecting Primary Master      ... " + emmcSize.val() + " Internal Storage", 64, 352);
-    drawText("Detecting Primary Slave       ... " + sdSize.val() + " SD Card", 64, 384);
+    drawText("Detecting Primary Master      ... " + emmcSize.val() + " Internal Memory", 64, 352);
+    drawText("Detecting Primary Slave       ... " + sdSize.val() + " microSD Card", 64, 384);
     drawText("Detecting Secondary Master    ... None", 64, 416);
     drawText("Detecting Secondary Slave     ... None", 64, 448);
 
