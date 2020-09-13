@@ -152,7 +152,7 @@ function redrawCanvas(){
             drawCanvasCtx.drawImage(symbolSheetNX, 30, 168, 101, 84, 1100, 16, 151, 134);
 			break;
 	case 'sxos':
-	    drawCanvasCtx.drawImage(symbolSheetNX, 39, 252, 93, 84, 1128, 16, 151, 134);
+	    drawCanvasCtx.drawImage(symbolSheetNX, 39, 252, 101, 84, 1100, 16, 139, 126);
 			break;
 	case 'switchlogo':
             drawCanvasCtx.drawImage(symbolSheet, 39, 252, 93, 84, 1128, 16, 139, 126);
