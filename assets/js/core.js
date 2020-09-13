@@ -173,8 +173,6 @@ function redrawCanvas(){
 
     if (firmwareVersion.val() == "8.1.1")
     	drawText("Nintendo Switch Lite (ver " + firmwareVersion.val() + ") (" + region.val() + ")", 32, 160);
-    if (firmwareVersion.val() == "10.1.1")
-    	drawText("Nintendo Switch (ver " + firmwareVersion.val()")", 32, 160);
     else
 	drawText("Nintendo Switch (ver " + firmwareVersion.val() + ") (" + region.val() + ")", 32, 160);
 
@@ -187,7 +185,12 @@ function redrawCanvas(){
     drawText("Detecting Secondary Master    ... None", 64, 416);
     drawText("Detecting Secondary Slave     ... None", 64, 448);
 
-    drawText("Booting Horizon OS...", 32, 512);
+    if (cfwType.val() == "lakka")
+    	drawText("Booting GNU/Linux...", 32, 512);
+    else if (cfwType.val() == "lineageos")
+	drawText("Booting Android Oreo...", 32, 512);
+    else
+	drawText("Booting Horizon OS...", 32, 512);
 
     if(shouldDrawCustomBootString)
         drawText("Hold _" + bootloaderKey.val() + "_ " + bootTime.text() + " to enter _" + bootloader.val() + "_.", 16, CANVAS_HEIGHT - 40);
