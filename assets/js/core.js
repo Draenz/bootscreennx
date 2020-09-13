@@ -101,7 +101,7 @@ function redrawCanvas(){
     if(!useCustomCfw){
 		switch(cfwType.val()) {
 			case 'atmosphere':
-				copyrightLine += 'SciresM, TuxSH, hexkyz, and fincs';
+				copyrightLine += 'SciresM, TuxSH, hexkyz and fincs';
 				break;
 			case 'reinx':
 				copyrightLine += 'Reisyukaku';
@@ -110,7 +110,7 @@ function redrawCanvas(){
 				copyrightLine += 'Natinusala and libretro';
 				break;
 			case 'lineageos':
-				copyrightLine += 'switchroot';
+				copyrightLine += 'Switchroot';
 				break;
 			case 'sxos':
 				copyrightLine += 'Team Xecuter';
@@ -143,16 +143,16 @@ function redrawCanvas(){
             drawCanvasCtx.drawImage(symbolSheet, 30, 168, 101, 84, 1100, 16, 151, 134);
 			break;
 	case 'reinx':
-            drawCanvasCtx.drawImage(symbolSheetNX, 39, 252, 93, 84, 1128, 16, 139, 126);
+	    drawCanvasCtx.drawImage(symbolSheetNX, 0, 84, 133, 84, 966, 16, 266, 168);
 			break;
 	case 'lakka':
-            drawCanvasCtx.drawImage(symbolSheetNX, 0, 84, 133, 84, 966, 16, 266, 168);
+	    drawCanvasCtx.drawImage(symbolSheetNX, 30, 168, 101, 84, 1100, 16, 151, 134);
 			break;
         case 'lineageos':
             drawCanvasCtx.drawImage(symbolSheetNX, 30, 168, 101, 84, 1100, 16, 151, 134);
 			break;
 	case 'sxos':
-            drawCanvasCtx.drawImage(symbolSheetNX, 30, 168, 101, 84, 1100, 16, 151, 134);
+	    drawCanvasCtx.drawImage(symbolSheetNX, 39, 252, 93, 84, 1128, 16, 151, 134);
 			break;
 	case 'switchlogo':
             drawCanvasCtx.drawImage(symbolSheet, 39, 252, 93, 84, 1128, 16, 139, 126);
@@ -173,6 +173,8 @@ function redrawCanvas(){
 
     if (firmwareVersion.val() == "8.1.1")
     	drawText("Nintendo Switch Lite (ver " + firmwareVersion.val() + ") (" + region.val() + ")", 32, 160);
+    if (firmwareVersion.val() == "10.1.1")
+    	drawText("Nintendo Switch (ver " + firmwareVersion.val()")", 32, 160);
     else
 	drawText("Nintendo Switch (ver " + firmwareVersion.val() + ") (" + region.val() + ")", 32, 160);
 
